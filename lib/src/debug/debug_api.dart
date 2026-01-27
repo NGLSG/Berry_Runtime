@@ -1,4 +1,4 @@
-﻿/// Debug API for VN Runtime
+/// Debug API for VN Runtime
 /// 
 /// Provides debugging capabilities for the VN engine including:
 /// - Breakpoint management
@@ -8,7 +8,7 @@
 
 import 'dart:async';
 
-import '../engine/vn_engine_state.dart';
+import '../vn_engine_state.dart';
 import 'debug_event.dart';
 
 /// Debug API for controlling and inspecting the VN engine

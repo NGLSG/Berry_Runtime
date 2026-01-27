@@ -1,4 +1,4 @@
-﻿/// Debug Log Exporter for VN Runtime
+/// Debug Log Exporter for VN Runtime
 /// 
 /// Provides debug log export capabilities:
 /// - State change logging with timestamps
@@ -10,7 +10,7 @@ import 'dart:convert';
 
 import 'debug_event.dart';
 import 'branch_coverage_analyzer.dart';
-import '../engine/vn_engine_state.dart';
+import '../vn_engine_state.dart';
 
 /// Export format for debug logs
 enum DebugLogFormat {

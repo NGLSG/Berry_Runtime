@@ -1,4 +1,4 @@
-﻿/// Enhanced Debug Controller for VN Runtime
+/// Enhanced Debug Controller for VN Runtime
 /// 
 /// Provides advanced debugging capabilities:
 /// - Jump to any node in the story
@@ -8,9 +8,9 @@
 
 import 'dart:async';
 
-import '../engine/vn_engine.dart';
-import '../engine/vn_engine_state.dart';
-import '../models/vn_node.dart';
+import '../vn_engine.dart';
+import '../vn_engine_state.dart';
+import '../../models/vn_node.dart';
 import 'debug_api.dart';
 import 'debug_event.dart';
 import 'branch_coverage_analyzer.dart';

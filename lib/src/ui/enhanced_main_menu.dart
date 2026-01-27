@@ -1,4 +1,4 @@
-﻿/// Enhanced Main Menu with Video Background, Free Layout, and Meta Effects
+/// Enhanced Main Menu with Video Background, Free Layout, and Meta Effects
 /// 
 /// Full-featured main menu supporting:
 /// - Video/Image/Color backgrounds
@@ -10,8 +10,8 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import '../models/vn_project.dart';
-import '../models/vn_theme.dart';
+import '../../models/vn_project.dart';
+import '../../models/vn_theme.dart';
 import '../effects/meta/meta_effects.dart';
 import '../effects/particles/particle_layer.dart';
 import 'video_background.dart';

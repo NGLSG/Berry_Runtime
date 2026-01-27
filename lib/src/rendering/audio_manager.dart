@@ -1,10 +1,10 @@
-﻿/// Audio Manager for VN Runtime
+/// Audio Manager for VN Runtime
 /// 
 /// Handles BGM, SFX, and voice playback with fade effects.
 
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-import '../models/vn_node.dart';
+import '../../models/vn_node.dart';
 
 /// Audio channel types
 enum VNAudioChannel {

@@ -1,11 +1,11 @@
-﻿/// Effects Layer for VN Runtime
+/// Effects Layer for VN Runtime
 /// 
 /// Handles screen effects (shake, flash, blur) and text effects (shake, wave, rainbow).
 
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import '../models/vn_node.dart';
+import '../../models/vn_node.dart';
 
 /// Screen effect types
 enum ScreenEffect {

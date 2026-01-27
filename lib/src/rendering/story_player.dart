@@ -1,14 +1,14 @@
-﻿/// Story Player Widget for VN Runtime
+/// Story Player Widget for VN Runtime
 /// 
 /// Combines all rendering layers into a unified playback widget.
 library;
 
 import 'package:flutter/material.dart';
-import '../engine/vn_engine.dart';
-import '../engine/node_executor.dart';
-import '../models/vn_character.dart';
-import '../models/vn_node.dart';
-import '../models/vn_project.dart';
+import '../vn_engine.dart';
+import '../node_executor.dart';
+import '../../models/vn_character.dart';
+import '../../models/vn_node.dart';
+import '../../models/vn_project.dart';
 import 'background_layer.dart';
 import 'character_layer.dart';
 import 'effects_layer.dart';

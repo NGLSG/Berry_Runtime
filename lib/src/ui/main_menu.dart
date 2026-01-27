@@ -1,4 +1,4 @@
-﻿/// Main Menu Widget
+/// Main Menu Widget
 /// 
 /// Provides the main menu for visual novels with options:
 /// New Game, Continue, Load, Gallery, Settings, Exit
@@ -11,7 +11,7 @@
 /// - Animations
 
 import 'package:flutter/material.dart';
-import '../models/vn_project.dart';
+import '../../models/vn_project.dart';
 import '../localization/vn_ui_strings.dart';
 
 /// Main menu action types

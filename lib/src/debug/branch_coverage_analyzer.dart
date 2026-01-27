@@ -1,4 +1,4 @@
-﻿/// Branch Coverage Analyzer for VN Runtime
+/// Branch Coverage Analyzer for VN Runtime
 /// 
 /// Provides branch coverage analysis for visual novel story graphs:
 /// - Tracks visited nodes and edges
@@ -6,7 +6,7 @@
 /// - Identifies untested paths
 /// - Generates coverage reports
 
-import '../compiler/vn_story_bundle.dart';
+import '../../compiler/vn_story_bundle.dart';
 
 /// Coverage status for a single node
 class NodeCoverageStatus {

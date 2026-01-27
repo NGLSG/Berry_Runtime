@@ -1,12 +1,12 @@
-﻿/// Character Layer for VN Runtime
+/// Character Layer for VN Runtime
 ///
 /// Handles character sprite display with positions, expressions, and animations.
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../models/vn_node.dart';
-import '../models/vn_character.dart';
-import '../engine/vn_engine_state.dart';
+import '../../models/vn_node.dart';
+import '../../models/vn_character.dart';
+import '../vn_engine_state.dart';
 
 /// Standard character slot positions on screen
 enum CharacterSlotPosition {

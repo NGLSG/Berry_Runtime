@@ -1,8 +1,8 @@
-﻿/// Debug events for VN Runtime
+/// Debug events for VN Runtime
 /// 
 /// Events emitted by the debug API for monitoring engine state.
 
-import '../engine/vn_engine_state.dart';
+import '../vn_engine_state.dart';
 
 /// Base class for debug events
 abstract class VNDebugEvent {

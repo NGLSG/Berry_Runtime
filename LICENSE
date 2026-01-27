@@ -1,0 +1,48 @@
+Berry Runtime License
+
+Copyright (c) 2026 NGLSG. All rights reserved.
+
+TERMS AND CONDITIONS
+
+1. GRANT OF LICENSE
+   This software is provided for use solely in conjunction with visual novel
+   games created using Choccy IDE. You are granted a non-exclusive,
+   non-transferable license to use this runtime library in your exported games.
+
+2. RESTRICTIONS
+   You may NOT:
+   - Modify, adapt, or create derivative works of this software
+   - Reverse engineer, decompile, or disassemble this software
+   - Remove or alter any proprietary notices or labels
+   - Redistribute this software as a standalone package
+   - Use this software in any product not created with Choccy IDE
+   - Sell or sublicense this software separately
+
+3. PERMITTED USE
+   You MAY:
+   - Use this runtime in games exported from Choccy IDE
+   - Distribute games that include this runtime as a dependency
+   - Use this runtime for personal and commercial game projects
+
+4. INTELLECTUAL PROPERTY
+   This software and all copies thereof are proprietary to NGLSG and title
+   to all copies is retained by NGLSG. All rights not specifically granted
+   in this license are reserved by NGLSG.
+
+5. NO WARRANTY
+   THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+6. LIMITATION OF LIABILITY
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+   USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+7. TERMINATION
+   This license is effective until terminated. Your rights under this license
+   will terminate automatically without notice if you fail to comply with any
+   of its terms.
+
+For licensing inquiries, contact: gug777514@gmail.com

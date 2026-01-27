@@ -1,4 +1,4 @@
-﻿/// Automated Path Tester for VN Runtime
+/// Automated Path Tester for VN Runtime
 /// 
 /// Provides automated testing capabilities:
 /// - Automatic traversal of all story branches
@@ -8,9 +8,9 @@
 
 import 'dart:async';
 
-import '../engine/vn_engine.dart';
-import '../engine/vn_engine_state.dart';
-import '../compiler/vn_story_bundle.dart';
+import '../vn_engine.dart';
+import '../vn_engine_state.dart';
+import '../../compiler/vn_story_bundle.dart';
 import 'branch_coverage_analyzer.dart';
 
 /// Result of a single path test
