@@ -36,13 +36,15 @@ export 'src/compiler/vn_story_bundle.dart';
 export 'src/compiler/vn_resource_manifest.dart';
 
 // Rendering
-export 'src/runtime/rendering/vn_rendering.dart';
+// Hide EffectText and TextEffectConfig to avoid conflict with effects module
+export 'src/runtime/rendering/vn_rendering.dart' hide EffectText, TextEffectConfig;
 
 // UI Components
 export 'src/runtime/ui/vn_runtime_ui.dart';
 
 // Effects
-export 'src/runtime/effects/effects.dart';
+// Hide TextEffectType to avoid conflict with vn_node.dart
+export 'src/runtime/effects/effects.dart' hide TextEffectType;
 
 // Save System
 export 'src/runtime/save/save.dart';
@@ -83,7 +85,8 @@ export 'src/runtime/minigame/minigame.dart';
 export 'src/runtime/newgameplus/newgameplus.dart';
 
 // Performance
-export 'src/runtime/performance/performance.dart';
+// Hide AudioType to avoid conflict with vn_resource.dart
+export 'src/runtime/performance/performance.dart' hide AudioType;
 
 // Progress
 export 'src/runtime/progress/progress.dart';

@@ -150,6 +150,17 @@ class DialogueExecutionData {
   final int totalDialogues;
   final bool isLastDialogue;
 
+  /// Character position slot for this dialogue line
+  final String? characterSlot;
+  /// Custom X position (0.0 - 1.0)
+  final double? characterX;
+  /// Custom Y position (0.0 - 1.0)
+  final double? characterY;
+  /// Character scale
+  final double? characterScale;
+  /// Whether to flip character horizontally
+  final bool? characterFlipped;
+
   const DialogueExecutionData({
     this.speakerId,
     this.speakerName,
@@ -159,6 +170,11 @@ class DialogueExecutionData {
     required this.dialogueIndex,
     required this.totalDialogues,
     required this.isLastDialogue,
+    this.characterSlot,
+    this.characterX,
+    this.characterY,
+    this.characterScale,
+    this.characterFlipped,
   });
 }
 
@@ -361,6 +377,11 @@ class NodeExecutor {
       dialogueIndex: _currentDialogueIndex,
       totalDialogues: dialogues.length,
       isLastDialogue: _currentDialogueIndex == dialogues.length - 1,
+      characterSlot: dialogue['characterSlot'] as String?,
+      characterX: (dialogue['characterX'] as num?)?.toDouble(),
+      characterY: (dialogue['characterY'] as num?)?.toDouble(),
+      characterScale: (dialogue['characterScale'] as num?)?.toDouble(),
+      characterFlipped: dialogue['characterFlipped'] as bool?,
     );
 
     // Return dialogue with background info (only set background on first dialogue)

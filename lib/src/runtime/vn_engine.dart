@@ -508,22 +508,41 @@ class VNEngine {
         updatedCharacters = updatedCharacters.map((id, state) =>
           MapEntry(id, state.copyWith(isSpeaking: false)));
 
+        // Get position data from dialogue (if set)
+        final dialogueSlot = result.dialogue!.characterSlot;
+        final dialogueX = result.dialogue!.characterX;
+        final dialogueY = result.dialogue!.characterY;
+        final dialogueScale = result.dialogue!.characterScale;
+        final dialogueFlipped = result.dialogue!.characterFlipped;
+
         // Add or update the speaking character
         if (updatedCharacters.containsKey(speakerId)) {
-          updatedCharacters[speakerId] = updatedCharacters[speakerId]!.copyWith(
+          // Update existing character with expression and optional position override
+          final currentState = updatedCharacters[speakerId]!;
+          updatedCharacters[speakerId] = currentState.copyWith(
             expression: result.dialogue!.expression,
             isSpeaking: true,
+            // Apply position from dialogue if specified
+            slot: dialogueSlot ?? currentState.slot,
+            customX: dialogueX,
+            customY: dialogueY,
+            scale: dialogueScale ?? currentState.scale,
+            flipped: dialogueFlipped ?? currentState.flipped,
           );
         } else {
           // Add new character to display
           updatedCharacters[speakerId] = CharacterDisplayState(
             characterId: speakerId,
             expression: result.dialogue!.expression,
-            slot: _getNextAvailableSlot(updatedCharacters),
+            slot: dialogueSlot ?? _getNextAvailableSlot(updatedCharacters),
+            customX: dialogueX,
+            customY: dialogueY,
+            scale: dialogueScale ?? 1.0,
+            flipped: dialogueFlipped ?? false,
             isSpeaking: true,
           );
         }
-        print('[VNEngine] Updated displayedCharacters: ${updatedCharacters.keys.toList()}');
+        print('[VNEngine] Updated displayedCharacters: ${updatedCharacters.keys.toList()}, slot: ${updatedCharacters[speakerId]?.slot}');
       }
 
       _updateState(_state.copyWith(

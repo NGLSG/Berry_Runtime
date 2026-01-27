@@ -297,9 +297,11 @@ class CharacterLayerController extends ChangeNotifier {
   }
 
   /// Parse slot string to CharacterSlotPosition
+  /// Supports both snake_case (far_left) and camelCase (farLeft) formats
   CharacterSlotPosition _parseSlotPosition(String slot) {
-    switch (slot) {
+    switch (slot.toLowerCase()) {
       case 'far_left':
+      case 'farleft':
         return CharacterSlotPosition.farLeft;
       case 'left':
         return CharacterSlotPosition.left;
@@ -308,6 +310,7 @@ class CharacterLayerController extends ChangeNotifier {
       case 'right':
         return CharacterSlotPosition.right;
       case 'far_right':
+      case 'farright':
         return CharacterSlotPosition.farRight;
       case 'custom':
         return CharacterSlotPosition.custom;
