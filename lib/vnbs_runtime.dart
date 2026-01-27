@@ -1,4 +1,4 @@
-/// VNBS Runtime - Visual Novel Runtime Engine
+﻿/// VNBS Runtime - Visual Novel Runtime Engine
 ///
 /// Core runtime library for visual novel games created with Choccy IDE.
 ///
@@ -12,11 +12,13 @@
 /// - Effects (screen effects, particles, meta effects)
 library vnbs_runtime;
 
-// Core engine
-export 'src/engine/vn_engine.dart';
-export 'src/engine/vn_engine_state.dart';
-export 'src/engine/node_executor.dart';
-export 'src/engine/variable_manager.dart';
+// Core runtime
+export 'src/runtime/vn_engine.dart';
+export 'src/runtime/vn_engine_state.dart';
+export 'src/runtime/node_executor.dart';
+export 'src/runtime/variable_manager.dart';
+export 'src/runtime/vn_runtime.dart';
+export 'src/runtime/chapter_jump_controller.dart';
 
 // Models
 export 'src/models/vn_character.dart';
@@ -27,41 +29,73 @@ export 'src/models/vn_node.dart';
 export 'src/models/vn_resource.dart';
 export 'src/models/chapter.dart';
 export 'src/models/story_graph.dart';
+export 'src/models/story_graph_validator.dart';
 
 // Compiler/Bundle
 export 'src/compiler/vn_story_bundle.dart';
 export 'src/compiler/vn_resource_manifest.dart';
 
 // Rendering
-export 'src/rendering/character_layer.dart';
-export 'src/rendering/background_layer.dart';
-export 'src/rendering/effects_layer.dart';
-export 'src/rendering/audio_manager.dart';
-export 'src/rendering/story_player.dart';
+export 'src/runtime/rendering/vn_rendering.dart';
 
 // UI Components
-export 'src/ui/main_menu.dart';
-export 'src/ui/enhanced_main_menu.dart';
-export 'src/ui/quick_menu.dart';
-export 'src/ui/adv_textbox.dart';
-export 'src/ui/choice_panel.dart';
-export 'src/ui/save_load_screen.dart';
-export 'src/ui/settings_screen.dart';
-export 'src/ui/backlog_screen.dart';
-export 'src/ui/gallery_screen.dart';
+export 'src/runtime/ui/vn_runtime_ui.dart';
 
 // Effects
-export 'src/effects/text/text_effect_parser.dart';
-export 'src/effects/text/text_effect_widgets.dart';
-export 'src/effects/meta/meta_effects.dart';
-export 'src/effects/meta/story_meta_effects.dart';
-export 'src/effects/particles/particle_layer.dart';
-export 'src/effects/particles/particle_presets.dart';
-export 'src/effects/particles/particles.dart';
-export 'src/effects/particles/particle_shape.dart';
-export 'src/effects/particles/range.dart';
-export 'src/effects/particles/particle_emitter_config.dart';
-export 'src/effects/particles/particle.dart';
-export 'src/effects/particles/particle_pool.dart';
-export 'src/effects/particles/particle_emitter.dart';
-export 'src/effects/particles/particle_system_manager.dart';
+export 'src/runtime/effects/effects.dart';
+
+// Save System
+export 'src/runtime/save/save.dart';
+
+// Scripting
+export 'src/runtime/scripting/scripting.dart';
+
+// Debug
+export 'src/runtime/debug/debug_api.dart';
+export 'src/runtime/debug/debug_event.dart';
+
+// Accessibility
+export 'src/runtime/accessibility/accessibility.dart';
+
+// Achievements
+export 'src/runtime/achievements/achievements.dart';
+
+// Affection System
+export 'src/runtime/affection/affection.dart';
+
+// Endings
+export 'src/runtime/endings/endings.dart';
+
+// Flowchart
+export 'src/runtime/flowchart/flowchart.dart';
+
+// Journal
+export 'src/runtime/journal/journal.dart';
+
+// Localization
+export 'src/runtime/localization/localization_manager.dart';
+export 'src/runtime/localization/vn_ui_strings.dart';
+
+// Minigame
+export 'src/runtime/minigame/minigame.dart';
+
+// New Game Plus
+export 'src/runtime/newgameplus/newgameplus.dart';
+
+// Performance
+export 'src/runtime/performance/performance.dart';
+
+// Progress
+export 'src/runtime/progress/progress.dart';
+
+// Protection
+export 'src/runtime/protection/protection.dart';
+
+// Replay
+export 'src/runtime/replay/replay.dart';
+
+// Statistics
+export 'src/runtime/statistics/statistics.dart';
+
+// Voice
+export 'src/runtime/voice/voice.dart';
