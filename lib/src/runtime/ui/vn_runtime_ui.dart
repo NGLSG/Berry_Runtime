@@ -18,8 +18,7 @@ export 'enhanced_main_menu.dart';
 
 // System screens
 export 'settings_screen.dart';
-// Hide SaveSlotType and VNSaveSlot to avoid conflict with vn_save_data.dart
-export 'save_load_screen.dart' hide SaveSlotType, VNSaveSlot;
+export 'save_load_screen.dart';
 // Hide BacklogEntry and BacklogController to avoid conflict with save module
 export 'backlog_screen.dart' hide BacklogEntry, BacklogController;
 

@@ -4,7 +4,7 @@
 /// Includes save data models, save manager, version migration,
 /// read state tracking, and backlog/history management.
 
-export 'vn_save_data.dart' hide VNUserSettings;
+export 'vn_save_data.dart' hide VNUserSettings, VNSaveSlot, SaveSlotType;
 export 'vn_save_manager.dart';
 export 'vn_save_migration.dart';
 export 'read_state_manager.dart';
