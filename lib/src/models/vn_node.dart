@@ -86,13 +86,28 @@ class DialogueLine {
 
   /// Voice audio file ID (default/fallback voice)
   final String? voiceId;
-  
+
   /// Localized voice files by language code
   /// Maps language code to voice file ID
   final Map<String, String> localizedVoice;
 
   /// Text effects applied to this line
   final List<TextEffect> effects;
+
+  /// Character position slot for this dialogue line (overrides scene default)
+  final CharacterSlot? characterSlot;
+
+  /// Custom X position (0.0 - 1.0, overrides slot if set)
+  final double? characterX;
+
+  /// Custom Y position (0.0 - 1.0, overrides slot if set)
+  final double? characterY;
+
+  /// Character scale for this dialogue line
+  final double? characterScale;
+
+  /// Whether to flip character horizontally
+  final bool? characterFlipped;
 
   const DialogueLine({
     this.speakerId,
@@ -102,6 +117,11 @@ class DialogueLine {
     this.voiceId,
     this.localizedVoice = const {},
     this.effects = const [],
+    this.characterSlot,
+    this.characterX,
+    this.characterY,
+    this.characterScale,
+    this.characterFlipped,
   });
 
   /// Gets the voice ID for a specific language, with fallback to default
@@ -122,6 +142,11 @@ class DialogueLine {
         if (voiceId != null) 'voiceId': voiceId,
         if (localizedVoice.isNotEmpty) 'localizedVoice': localizedVoice,
         if (effects.isNotEmpty) 'effects': effects.map((e) => e.toJson()).toList(),
+        if (characterSlot != null) 'characterSlot': characterSlot!.name,
+        if (characterX != null) 'characterX': characterX,
+        if (characterY != null) 'characterY': characterY,
+        if (characterScale != null) 'characterScale': characterScale,
+        if (characterFlipped != null) 'characterFlipped': characterFlipped,
       };
 
   factory DialogueLine.fromJson(Map<String, dynamic> json) {
@@ -140,6 +165,16 @@ class DialogueLine {
               ?.map((e) => TextEffect.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      characterSlot: json['characterSlot'] != null
+          ? CharacterSlot.values.firstWhere(
+              (e) => e.name == json['characterSlot'],
+              orElse: () => CharacterSlot.center,
+            )
+          : null,
+      characterX: (json['characterX'] as num?)?.toDouble(),
+      characterY: (json['characterY'] as num?)?.toDouble(),
+      characterScale: (json['characterScale'] as num?)?.toDouble(),
+      characterFlipped: json['characterFlipped'] as bool?,
     );
   }
 
@@ -151,7 +186,17 @@ class DialogueLine {
     String? voiceId,
     Map<String, String>? localizedVoice,
     List<TextEffect>? effects,
+    CharacterSlot? characterSlot,
+    double? characterX,
+    double? characterY,
+    double? characterScale,
+    bool? characterFlipped,
     bool clearVoiceId = false,
+    bool clearCharacterSlot = false,
+    bool clearCharacterX = false,
+    bool clearCharacterY = false,
+    bool clearCharacterScale = false,
+    bool clearCharacterFlipped = false,
   }) {
     return DialogueLine(
       speakerId: speakerId ?? this.speakerId,
@@ -161,6 +206,11 @@ class DialogueLine {
       voiceId: clearVoiceId ? null : (voiceId ?? this.voiceId),
       localizedVoice: localizedVoice ?? this.localizedVoice,
       effects: effects ?? this.effects,
+      characterSlot: clearCharacterSlot ? null : (characterSlot ?? this.characterSlot),
+      characterX: clearCharacterX ? null : (characterX ?? this.characterX),
+      characterY: clearCharacterY ? null : (characterY ?? this.characterY),
+      characterScale: clearCharacterScale ? null : (characterScale ?? this.characterScale),
+      characterFlipped: clearCharacterFlipped ? null : (characterFlipped ?? this.characterFlipped),
     );
   }
 }
