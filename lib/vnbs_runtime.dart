@@ -1,4 +1,4 @@
-﻿/// VNBS Runtime - Visual Novel Runtime Engine
+/// VNBS Runtime - Visual Novel Runtime Engine
 ///
 /// Core runtime library for visual novel games created with Choccy IDE.
 ///
@@ -20,13 +20,13 @@ export 'src/runtime/variable_manager.dart';
 export 'src/runtime/vn_runtime.dart';
 export 'src/runtime/chapter_jump_controller.dart';
 
-// Models
+// Models (primary definitions)
 export 'src/models/vn_character.dart';
 export 'src/models/vn_theme.dart';
 export 'src/models/vn_project.dart';
 export 'src/models/vn_variable.dart';
-export 'src/models/vn_node.dart';
-export 'src/models/vn_resource.dart';
+export 'src/models/vn_node.dart'; // Contains TextEffectType
+export 'src/models/vn_resource.dart'; // Contains AudioType
 export 'src/models/chapter.dart';
 export 'src/models/story_graph.dart';
 export 'src/models/story_graph_validator.dart';
@@ -35,14 +35,14 @@ export 'src/models/story_graph_validator.dart';
 export 'src/compiler/vn_story_bundle.dart';
 export 'src/compiler/vn_resource_manifest.dart';
 
-// Rendering
-export 'src/runtime/rendering/vn_rendering.dart';
+// Rendering (hide duplicates)
+export 'src/runtime/rendering/vn_rendering.dart' hide EffectText, TextEffectConfig;
 
 // UI Components
 export 'src/runtime/ui/vn_runtime_ui.dart';
 
-// Effects
-export 'src/runtime/effects/effects.dart';
+// Effects (hide duplicates)
+export 'src/runtime/effects/effects.dart' hide TextEffectType;
 
 // Save System
 export 'src/runtime/save/save.dart';
@@ -82,8 +82,8 @@ export 'src/runtime/minigame/minigame.dart';
 // New Game Plus
 export 'src/runtime/newgameplus/newgameplus.dart';
 
-// Performance
-export 'src/runtime/performance/performance.dart';
+// Performance (hide duplicates)
+export 'src/runtime/performance/performance.dart' hide AudioType;
 
 // Progress
 export 'src/runtime/progress/progress.dart';
