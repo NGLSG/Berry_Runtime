@@ -1,5 +1,5 @@
 /// VN Runtime Rendering Module
-/// 
+///
 /// This module provides the complete rendering system for visual novel runtime.
 /// Includes background, character, effects, and audio management.
 library vn_rendering;
@@ -12,7 +12,8 @@ export 'background_layer.dart' hide BackgroundTransition;
 export 'character_layer.dart';
 
 // Screen and text effects
-export 'effects_layer.dart';
+// Hide EffectText and TextEffectConfig to avoid conflict with effects module
+export 'effects_layer.dart' hide EffectText, TextEffectConfig;
 
 // Audio management
 export 'audio_manager.dart';
