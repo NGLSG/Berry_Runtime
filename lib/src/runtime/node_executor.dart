@@ -4,6 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 
+import '../compiler/condition_precompiler.dart';
 import '../compiler/vn_story_bundle.dart';
 import '../models/vn_variable.dart';
 import '../models/vn_node.dart' show VariableOperation;
@@ -495,12 +496,14 @@ class NodeExecutor {
     final trueNodeId = node.data['trueNodeId'] as String?;
     final falseNodeId = node.data['falseNodeId'] as String?;
 
-    if (expression.isEmpty) {
+    if (expression.isEmpty && node.data['_compiledCondition'] == null) {
       return NodeExecutionResult.error('Condition node has no expression');
     }
 
-    final evaluator = ConditionEvaluator(_variableManager.getAllVariables());
-    final result = evaluator.evaluateExpression(expression);
+    final result = ConditionPrecompiler.evaluatePrecompiled(
+      node.data,
+      _variableManager.getAllVariables(),
+    );
 
     final nextNodeId = result ? trueNodeId : falseNodeId;
     if (nextNodeId == null || nextNodeId.isEmpty) {
@@ -521,9 +524,8 @@ class NodeExecutor {
       return NodeExecutionResult.error('Switch node has no cases');
     }
 
-    final evaluator = ConditionEvaluator(_variableManager.getAllVariables());
+    final variables = _variableManager.getAllVariables();
     
-    // Evaluate cases in order, find first matching condition
     String? matchedNodeId;
     String? defaultNodeId;
     
@@ -532,20 +534,17 @@ class NodeExecutor {
       final expression = caseMap['expression'] as String? ?? '';
       final targetNodeId = caseMap['targetNodeId'] as String?;
       
-      if (expression.isEmpty) {
-        // This is the default/else case
+      if (expression.isEmpty && caseMap['_compiledCondition'] == null) {
         defaultNodeId = targetNodeId;
         continue;
       }
       
-      // Evaluate the condition
-      if (evaluator.evaluateExpression(expression)) {
+      if (ConditionPrecompiler.evaluatePrecompiled(caseMap, variables)) {
         matchedNodeId = targetNodeId;
         break;
       }
     }
     
-    // Use matched case, or fall back to default
     final nextNodeId = matchedNodeId ?? defaultNodeId;
     
     if (nextNodeId == null || nextNodeId.isEmpty) {

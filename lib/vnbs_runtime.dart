@@ -1,4 +1,4 @@
-﻿/// VNBS Runtime - Visual Novel Runtime Engine
+/// VNBS Runtime - Visual Novel Runtime Engine
 ///
 /// Core runtime library for visual novel games created with Choccy IDE.
 ///
@@ -34,6 +34,8 @@ export 'src/models/story_graph_validator.dart';
 // Compiler/Bundle
 export 'src/compiler/vn_story_bundle.dart';
 export 'src/compiler/vn_resource_manifest.dart';
+export 'src/compiler/lazy_story_bundle.dart';
+export 'src/compiler/condition_precompiler.dart';
 
 // Rendering
 // Hide EffectText and TextEffectConfig to avoid conflict with effects module
