@@ -153,29 +153,26 @@ class VNStoryBundle {
 
   /// Get a chapter by ID
   CompiledChapter? getChapter(String id) {
-    try {
-      return chapters.firstWhere((c) => c.id == id);
-    } catch (_) {
-      return null;
+    for (final c in chapters) {
+      if (c.id == id) return c;
     }
+    return null;
   }
 
   /// Get a character by ID
   VNCharacter? getCharacter(String id) {
-    try {
-      return characters.firstWhere((c) => c.id == id);
-    } catch (_) {
-      return null;
+    for (final c in characters) {
+      if (c.id == id) return c;
     }
+    return null;
   }
 
   /// Get a variable definition by name
   VNVariable? getVariable(String name) {
-    try {
-      return variables.firstWhere((v) => v.name == name);
-    } catch (_) {
-      return null;
+    for (final v in variables) {
+      if (v.name == name) return v;
     }
+    return null;
   }
 
   /// Get initial variable values
