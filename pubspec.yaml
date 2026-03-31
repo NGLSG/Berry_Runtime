@@ -1,6 +1,6 @@
 name: vnbs_runtime
 description: VNBS Visual Novel Runtime Engine - Core runtime for visual novel games created with Choccy IDE
-version: 1.0.0
+version: 1.1.0
 homepage: https://github.com/NGLSG/Berry_Runtime
 publish_to: 'none'
 
